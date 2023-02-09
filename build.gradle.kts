@@ -24,3 +24,8 @@ tasks {
         useJUnitPlatform()
     }
 }
+
+detekt {
+    config = files("detekt-config.yml")
+    buildUponDefaultConfig = true
+}

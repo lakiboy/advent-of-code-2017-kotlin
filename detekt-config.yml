@@ -1,3 +1,5 @@
 style:
   MagicNumber:
     active: false
+  ReturnCount:
+    max: 5
