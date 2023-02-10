@@ -7,9 +7,10 @@ in [Kotlin](https://kotlinlang.org).
 
 ## Puzzles
 
-| Day | Title                    | Task                                        | Input                                | Solution                                               | Test                                                     |
-|-----|--------------------------|---------------------------------------------|--------------------------------------|--------------------------------------------------------|----------------------------------------------------------|
-| 1   | Inverse Captcha          | [Docs](https://adventofcode.com/2017/day/1) | [Text](src/main/resources/day01.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day01.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day01Test.kt) |
-| 2   | Corruption Checksum      | [Docs](https://adventofcode.com/2017/day/2) | [Text](src/main/resources/day02.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day02.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day02Test.kt) |
-| 3   | Spiral Memory            | [Docs](https://adventofcode.com/2017/day/3) | `330785`                             | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day03.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day03Test.kt) |
-| 4   | High-Entropy Passphrases | [Docs](https://adventofcode.com/2017/day/4) | [Text](src/main/resources/day04.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day04.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day04Test.kt) |
+| Day | Title                                   | Task                                        | Input                                | Solution                                               | Test                                                     |
+|-----|-----------------------------------------|---------------------------------------------|--------------------------------------|--------------------------------------------------------|----------------------------------------------------------|
+| 1   | Inverse Captcha                         | [Docs](https://adventofcode.com/2017/day/1) | [Text](src/main/resources/day01.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day01.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day01Test.kt) |
+| 2   | Corruption Checksum                     | [Docs](https://adventofcode.com/2017/day/2) | [Text](src/main/resources/day02.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day02.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day02Test.kt) |
+| 3   | Spiral Memory                           | [Docs](https://adventofcode.com/2017/day/3) | `330785`                             | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day03.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day03Test.kt) |
+| 4   | High-Entropy Passphrases                | [Docs](https://adventofcode.com/2017/day/4) | [Text](src/main/resources/day04.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day04.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day04Test.kt) |
+| 5   | A Maze of Twisty Trampolines, All Alike | [Docs](https://adventofcode.com/2017/day/5) | [Text](src/main/resources/day05.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day05.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day05Test.kt) |
