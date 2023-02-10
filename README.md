@@ -11,3 +11,4 @@ in [Kotlin](https://kotlinlang.org).
 |-----|---------------------|---------------------------------------------|--------------------------------------|--------------------------------------------------------|----------------------------------------------------------|
 | 1   | Inverse Captcha     | [Docs](https://adventofcode.com/2017/day/1) | [Text](src/main/resources/day01.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day01.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day01Test.kt) |
 | 2   | Corruption Checksum | [Docs](https://adventofcode.com/2017/day/2) | [Text](src/main/resources/day02.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day01.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day02Test.kt) |
+| 3   | Spiral Memory       | [Docs](https://adventofcode.com/2017/day/3) | `330785`                             | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day03.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day03Test.kt) |

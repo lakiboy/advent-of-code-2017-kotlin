@@ -13,7 +13,6 @@ class Day02(input: List<String>) {
         for (i in numbers) {
             for (j in numbers) {
                 when {
-                    i == j -> continue
                     i > j && i % j == 0 -> return i / j
                     j > i && j % i == 0 -> return j / i
                 }

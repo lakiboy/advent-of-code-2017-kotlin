@@ -1,24 +1,42 @@
 package io.dmitrijs.aoc2017
 
 class Day03(private val num: Int) {
-    private val target = Point(0, 0)
+    private val start = Point(0, 0)
 
     fun puzzle1(): Int {
         if (num == 1) {
             return 0
         }
 
-        val (step, side) = generateSequence(1 to 1) { (step, side) ->
-            (step + 1 to side + 2).takeIf { (_, side) -> num >= side * side }
+        val side = generateSequence(1) { side ->
+            (side + 2).takeIf { num >= it * it }
         }.last()
 
-        val corner = Point(step - 1, step - 1)
+        val corner = Point(side / 2, side / 2)
         val square = side * side
 
         return framingMoves(side + 1)
             .take(num - square)
             .fold(corner) { point, direction -> (point + direction) }
-            .distanceTo(target)
+            .distanceTo(start)
+    }
+
+    fun puzzle2(): Int {
+        var cursor = start
+        val spiral = hashMapOf(start to 1)
+
+        for (side in generateSequence(1) { it + 2 }) {
+            for (direction in framingMoves(side)) {
+                cursor += direction
+                spiral[cursor] = cursor.neighbours().sumOf { spiral.getOrDefault(it, 0) }.also { sum ->
+                    if (sum > num) {
+                        return sum
+                    }
+                }
+            }
+        }
+
+        return -1
     }
 
     private fun framingMoves(side: Int) = sequence {
