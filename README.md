@@ -3,7 +3,7 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/lakiboy/advent-of-code-2017-kotlin.svg?style=svg&circle-token=9f194f109015a0b0237e9ad54b647aff5532ea1a)](https://dl.circleci.com/status-badge/redirect/gh/lakiboy/advent-of-code-2017-kotlin/tree/main)
 
 My solutions (WIP) for the [Advent of Code 2017](https://adventofcode.com/2017) puzzles
-in [Kotlin](https://kotlinlang.org).
+in [Kotlin](https://kotlinlang.org) in 2023.
 
 ## Puzzles
 
@@ -16,3 +16,4 @@ in [Kotlin](https://kotlinlang.org).
 | 5   | A Maze of Twisty Trampolines, All Alike | [Docs](https://adventofcode.com/2017/day/5) | [Text](src/main/resources/day05.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day05.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day05Test.kt) |
 | 6   | Memory Reallocation                     | [Docs](https://adventofcode.com/2017/day/6) | [Text](src/main/resources/day06.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day06.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day06Test.kt) |
 | 7   | Recursive Circus                        | [Docs](https://adventofcode.com/2017/day/7) | [Text](src/main/resources/day07.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day07.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day07Test.kt) |
+| 8   | I Heard You Like Registers              | [Docs](https://adventofcode.com/2017/day/8) | [Text](src/main/resources/day08.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day08.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day08Test.kt) |
