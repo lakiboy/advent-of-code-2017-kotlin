@@ -20,4 +20,18 @@ internal class Day14Test {
             assertEquals(8_316, Day14("ljoxqyyw").puzzle1())
         }
     }
+
+    @Nested
+    @DisplayName("Puzzle 2")
+    inner class Puzzle2 {
+        @Test
+        fun `solves example`() {
+            assertEquals(1_242, Day14("flqrgnkx").puzzle2())
+        }
+
+        @Test
+        fun `solves problem`() {
+            assertEquals(1_074, Day14("ljoxqyyw").puzzle2())
+        }
+    }
 }
