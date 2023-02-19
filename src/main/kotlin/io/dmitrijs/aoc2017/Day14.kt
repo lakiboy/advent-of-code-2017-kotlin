@@ -3,7 +3,7 @@ package io.dmitrijs.aoc2017
 class Day14(private val input: String) {
     fun puzzle1() =
         input.toGrid().sumOf { hash ->
-            hash.chunked(2).sumOf { hex ->
+            hash.chunked(7).sumOf { hex ->
                 hex.toInt(16).countOneBits()
             }
         }
@@ -11,16 +11,13 @@ class Day14(private val input: String) {
     fun puzzle2(): Int {
         var blocks = 0
         val points = input.toGrid().flatMapIndexed { y, line ->
-            line.chunked(2)
-                .joinToString("") { it.toBin() }
-                .withIndex()
-                .fold(mutableSetOf<Point>()) { points, (x, char) ->
-                    points.apply {
-                        if (char == '1') {
-                            add(Point(x, y))
-                        }
+            line.toBin().withIndex().fold(mutableSetOf<Point>()) { points, (x, char) ->
+                points.apply {
+                    if (char == '1') {
+                        add(Point(x, y))
                     }
                 }
+            }
         }.toMutableSet()
 
         while (points.isNotEmpty()) {
@@ -51,5 +48,5 @@ class Day14(private val input: String) {
 
     private fun String.toGrid() = (0 until 128).map { knotHash("$this-$it") }
 
-    private fun String.toBin() = toInt(16).toString(2).padStart(8, '0')
+    private fun String.toBin() = toBigInteger(16).toString(2).padStart(128, '0')
 }
