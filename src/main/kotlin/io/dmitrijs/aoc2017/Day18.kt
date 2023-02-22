@@ -34,17 +34,17 @@ class Day18(input: List<String>) {
         fun runAndWait(other: Program) {
             do {
                 val expr = expressions[cursor]
-                val next = cursor + 1
-                cursor = when (expr.op) {
+                when (expr.op) {
                     // snd a
-                    "snd" -> next.also { other.produce(expr.value1) }.also { sentPackets++ }
+                    "snd" -> other.produce(expr.value1).also { sentPackets++ }
                     // rcv a
-                    "rcv" -> if (idle) next.also { table[expr.operand1] = consume() } else return
+                    "rcv" -> if (idle) table[expr.operand1] = consume() else return
                     // jgz a -2
-                    "jgz" -> if (expr.value1 > 0) cursor + expr.value2.toInt() else next
+                    "jgz" -> if (expr.value1 > 0) cursor += expr.value2.toInt() - 1
                     // set/add/mul/mod a 5
-                    else -> next.also { expr.eval() }
+                    else -> expr.eval()
                 }
+                cursor++
             } while (cursor < expressions.size)
         }
 
@@ -54,18 +54,18 @@ class Day18(input: List<String>) {
             var cur = 0
             do {
                 val expr = expressions[cur]
-                val next = cur + 1
-                cur = when (expr.op) {
+                when (expr.op) {
                     // snd a
-                    "snd" -> next.also { snd = expr.value1 }
+                    "snd" -> snd = expr.value1
                     // rcv a
-                    "rcv" -> if (expr.value1 == 0L) next else EXIT
+                    "rcv" -> if (expr.value1 != 0L) cur = -2
                     // jgz a -2
-                    "jgz" -> if (expr.value1 > 0) cur + expr.value2.toInt() else next
+                    "jgz" -> if (expr.value1 > 0) cur += expr.value2.toInt() - 1
                     // set/add/mul/mod a 5
-                    else -> next.also { expr.eval() }
+                    else -> expr.eval()
                 }
-            } while (cur != EXIT)
+                cur++
+            } while (cur != -1)
 
             return snd
         }
@@ -96,9 +96,5 @@ class Day18(input: List<String>) {
                 Expr(parts[0], parts[1], parts.getOrNull(2) ?: "")
             }
         }
-    }
-
-    companion object {
-        private const val EXIT = -1
     }
 }
