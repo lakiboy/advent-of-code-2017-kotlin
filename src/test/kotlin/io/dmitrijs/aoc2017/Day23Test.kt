@@ -18,12 +18,12 @@ internal class Day23Test {
         }
     }
 
-//    @Nested
-//    @DisplayName("Puzzle 2")
-//    inner class Puzzle2 {
-//        @Test
-//        fun `solves problem`() {
-//            assertEquals(9_409, Day23(problemInput).puzzle2())
-//        }
-//    }
+    @Nested
+    @DisplayName("Puzzle 2")
+    inner class Puzzle2 {
+        @Test
+        fun `solves problem`() {
+            assertEquals(913, Day23(problemInput).puzzle2())
+        }
+    }
 }
