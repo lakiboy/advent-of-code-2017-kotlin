@@ -2,7 +2,7 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/lakiboy/advent-of-code-2017-kotlin.svg?style=svg&circle-token=9f194f109015a0b0237e9ad54b647aff5532ea1a)](https://dl.circleci.com/status-badge/redirect/gh/lakiboy/advent-of-code-2017-kotlin/tree/main)
 
-My solutions (WIP) for the [Advent of Code 2017](https://adventofcode.com/2017) puzzles
+My solutions for the [Advent of Code 2017](https://adventofcode.com/2017) puzzles
 in [Kotlin](https://kotlinlang.org) in 2023.
 
 ## Puzzles
@@ -32,4 +32,5 @@ in [Kotlin](https://kotlinlang.org) in 2023.
 | 21  | Fractal Art                             | [Docs](https://adventofcode.com/2017/day/21) | [Text](src/main/resources/day21.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day21.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day21Test.kt) |
 | 22  | Sporifica Virus                         | [Docs](https://adventofcode.com/2017/day/22) | [Text](src/main/resources/day22.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day22.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day22Test.kt) |
 | 23  | Coprocessor Conflagration               | [Docs](https://adventofcode.com/2017/day/23) | [Text](src/main/resources/day23.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day23.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day23Test.kt) |
+| 24  | Electromagnetic Moat                    | [Docs](https://adventofcode.com/2017/day/24) | [Text](src/main/resources/day24.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day24.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day24Test.kt) |
 | 25  | The Halting Problem                     | [Docs](https://adventofcode.com/2017/day/25) | [Text](src/main/resources/day25.txt) | [Source](src/main/kotlin/io/dmitrijs/aoc2017/Day25.kt) | [Test](src/test/kotlin/io/dmitrijs/aoc2017/Day25Test.kt) |
