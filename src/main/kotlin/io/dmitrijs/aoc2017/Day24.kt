@@ -1,42 +1,60 @@
 package io.dmitrijs.aoc2017
 
 class Day24(input: List<String>) {
-    private val components = input.map { Component.of(it) }
+    private val components = input.map { Component.of(it) }.toSet()
+    private val connections: Map<Int, MutableList<Component>> = buildMap {
+        components.forEach {
+            getOrPut(it.l) { mutableListOf() }.add(it)
+            getOrPut(it.r) { mutableListOf() }.add(it)
+        }
+    }
 
-    fun puzzle1() = components.filter { it.matches(port = 0) }.maxOf { extractBridge(it) }
+    fun puzzle1() = connections.getValue(0).maxOf { bestWeight(it).first }
 
-    private fun extractBridge(start: Component): Int {
-        val queue = ArrayDeque<Connection>()
-        val visited = hashSetOf(start)
-        var result = -1
+    fun puzzle2() =
+        connections
+            .getValue(0)
+            .map { bestWeight(it) }
+            .sortedBy { it.first }
+            .maxBy { it.second }
+            .first
 
-        queue.add(start.connect(0))
+    private fun bestWeight(start: Component, longest: Boolean = false): Pair<Int, Int> {
+        val queue = ArrayDeque<Bridge>()
+        var result = Pair(-1, 0)
+
+        queue.add(start.connect(port = 0))
 
         while (queue.isNotEmpty()) {
-            val (port, strength) = queue.removeFirst()
-            result = maxOf(result, strength)
+            val (nodes, port, strength) = queue.removeFirst()
 
-            port.connections.filterNot { it in visited }.forEach { neighbour ->
-                queue.add(neighbour.connect(port, strength))
-                visited.add(neighbour)
+            result = when {
+                longest && nodes.size > result.second -> strength to nodes.size
+                (longest && nodes.size == result.second) || !longest -> maxOf(strength, result.first) to nodes.size
+                else -> result
             }
+
+            connections
+                .getValue(port)
+                .subtract(nodes)
+                .forEach { neighbour -> queue.add(neighbour.connect(port, nodes)) }
         }
 
         return result
     }
 
-    private val Int.connections get() = components.filter { it.matches(port = this) }
-
-    private data class Connection(val port: Int, val strength: Int)
+    private data class Bridge(
+        val nodes: Set<Component>,
+        val port: Int,
+        val strength: Int = nodes.sumOf { it.weight }
+    )
 
     private data class Component(val l: Int, val r: Int) {
-        private val weight get() = l + r
+        val weight get() = l + r
 
-        fun matches(port: Int) = l == port || r == port
-
-        fun connect(port: Int, strength: Int = 0) = Connection(
+        fun connect(port: Int, nodes: Set<Component> = emptySet()) = Bridge(
+            nodes = nodes + this,
             port = if (l == port) r else l,
-            strength = strength + weight,
         )
 
         companion object {
